@@ -1,14 +1,17 @@
 package com.webank.wecross.account.service.authentication.packet;
 
-import com.webank.wecross.account.service.account.UniversalAccount;
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-public class RegisterResponse {
+public class PubResponse {
     public int errorCode;
     public String message;
+    public Pub pub;
 
-    public UniversalAccount.Info universalAccount;
+    @Data
+    public static class Pub {
+        private String pub;
+    }
 }
